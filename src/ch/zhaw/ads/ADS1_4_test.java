@@ -1,12 +1,13 @@
 package ch.zhaw.ads;
 
+import ch.zhaw.ads.solutions.WellformedXmlServer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ADS1_4_test {
-    /*WellformedXmlServer xml;
+    WellformedXmlServer xml;
 
     @BeforeEach
     public void setUp() {
@@ -30,5 +31,5 @@ public class ADS1_4_test {
         test("<a/>", true);
         test("<a><b></b></a>", true);
         test("<a><b></a></b>", false);
-    }*/
+    }
 }

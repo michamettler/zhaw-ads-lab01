@@ -11,9 +11,6 @@ public class BracketServer implements CommandExecutor {
 
     @Override
     public String execute(String s) throws Exception {
-        Scanner scanner = new Scanner(new ByteArrayInputStream(s.getBytes()));
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
         return Boolean.toString(checkBrackets(s));
     }
 

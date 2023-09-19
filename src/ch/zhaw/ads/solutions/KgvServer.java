@@ -9,9 +9,9 @@ public class KgvServer implements CommandExecutor {
 
     @Override
     public String execute(String s) {
-        Scanner scanner = new Scanner(new ByteArrayInputStream(s.getBytes()));
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        String[] numbers = s.split("[ ,]+");
+        int a = Integer.parseInt(numbers[0]);
+        int b = Integer.parseInt(numbers[1]);
         return Integer.toString(kgv(a,b));
     }
 
