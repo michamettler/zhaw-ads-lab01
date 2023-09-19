@@ -2,11 +2,6 @@ package ch.zhaw.ads.solutions;
 
 import ch.zhaw.ads.CommandExecutor;
 
-import java.io.ByteArrayInputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public class WellformedXmlServer implements CommandExecutor {
 
     ListStack xmlStack;
@@ -20,15 +15,9 @@ public class WellformedXmlServer implements CommandExecutor {
         xmlStack = new ListStack();
 
         String[] tokens = s.split("<");
-        ArrayList<String> tokenList = new ArrayList<>(List.of(tokens));
-        if (tokenList.get(0).isEmpty()) {
-            tokenList.remove(0);
-        } else {
-            return false;
-        }
 
-        for (var token : tokenList) {
-            if (!token.contains("/>")) {
+        for (var token : tokens) {
+            if (!(token.contains("/>") || token.isEmpty())) {
                 if (token.charAt(0) != '/') {
                     token = token.substring(0, token.length() - 1);
 
@@ -41,7 +30,7 @@ public class WellformedXmlServer implements CommandExecutor {
                 } else {
                     token = token.substring(1);
                     token = token.substring(0, token.length() - 1);
-                    if (xmlStack.peek() != null && token.equals(xmlStack.peek().toString())) {
+                    if (!xmlStack.isEmpty() &&  xmlStack.peek() != null && token.equals(xmlStack.peek().toString())) {
                         xmlStack.pop();
                     } else {
                         return false;

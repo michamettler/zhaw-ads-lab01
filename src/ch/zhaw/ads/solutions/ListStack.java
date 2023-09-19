@@ -25,7 +25,6 @@ public class ListStack implements Stack {
             stack[top--] = null;
             return popObj;
         } else {
-            System.out.println("Stack Underflow");
             return null;
         }
     }
@@ -40,7 +39,6 @@ public class ListStack implements Stack {
         if (!isEmpty()) {
             return stack[top];
         } else {
-            System.out.println("Stack Underflow");
             return null;
         }
     }

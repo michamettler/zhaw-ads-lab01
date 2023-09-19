@@ -2,9 +2,6 @@ package ch.zhaw.ads.solutions;
 
 import ch.zhaw.ads.CommandExecutor;
 
-import java.io.ByteArrayInputStream;
-import java.util.Scanner;
-
 public class BracketServer implements CommandExecutor {
 
     ListStack bracketStack;

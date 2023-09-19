@@ -12,7 +12,7 @@ public class KgvServer implements CommandExecutor {
         String[] numbers = s.split("[ ,]+");
         int a = Integer.parseInt(numbers[0]);
         int b = Integer.parseInt(numbers[1]);
-        return Integer.toString(kgv(a,b));
+        return Integer.toString(kgv(a, b));
     }
 
     public int kgv(int a, int b) {
@@ -28,10 +28,7 @@ public class KgvServer implements CommandExecutor {
             b = c;
         }
 
-        // Da das kleinste gemeinsame Vielfache (kgV) zweier Zahlen der Quotient aus ihrem Produkt und ihrem ggT ist,
-        // lässt sich mit ihm auch das kgV ermitteln.
-        // Source: https://www.lernhelfer.de/schuelerlexikon/mathematik/artikel/euklidischer-algorithmus#:~:text=MATHEMATIK-,Der%20sogenannte%20euklidische%20Algorithmus%20ist%20ein%20Verfahren%20zum%20Ermitteln%20des,ihm%20auch%20das%20kgV%20ermitteln.
-        return first*second / a;
+        return first * second / a;
     }
 
 
