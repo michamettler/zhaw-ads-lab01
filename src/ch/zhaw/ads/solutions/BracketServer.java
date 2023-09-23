@@ -47,7 +47,7 @@ public class BracketServer implements CommandExecutor {
             case "(" -> ")";
             case ")" -> "(";
             case "[" -> "]";
-            case "]" -> "ü";
+            case "]" -> "[";
             default -> throw new IllegalStateException("Invalid bracket: " + s);
         };
     }
